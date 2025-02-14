@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- GOOGLE FONT LINK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- CSS LINK -->
+     <link rel="stylesheet" href="./index.css">
+     <!-- JavaScript LINK -->
+    <script defer src="./index.js"></script>
+</head>
+<body>
+    <div class="page">
+        <div class="page_container">
+            <!-- 검색창 ui -->
+            <div class="page_container_searchBar">
+                <input type="text" placeholder="검색어를 입력하세요." class="input">
+                <button class="button">
+                    <img src="./assets/icon-search.svg" alt="">
+                </button>
+            </div>        
+            <div class="page_container_dataBox">
+                <swiper-container class="mySwiper" navigation="true"></swiper-container>
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./node_modules/axios/dist/axios.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"
+    integrity="sha512-FwNWaxyfy2XlEINoSnZh1JQ5TRRtGow0D6XcmAWmYCRgvqOUTnzCxPc9uF35u5ZEpirk1uhlPVA19tflhvnW1g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</html>
