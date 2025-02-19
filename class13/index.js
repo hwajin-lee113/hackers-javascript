@@ -4,7 +4,7 @@ const targetDate = new Date('2025-12-31 00:00:00')
 let endTime = new Date(targetDate). getTime() // getTime() 메서드는 표준시에 따라 지정된 날짜의 시간에 해당하는 숫자 값을 반환
 let period = endTime - new Date().getTime() // 타깃날짜 - 오늘날짜 로 카운트다운의 기간을 설정
 
-// 카운트다운 ui에 들어갈 데이터
+// 카운트다운 ui에 들어갈 데이터 (하나의 객체로 묶어서 관리)
 const countdown = {
     days: "",
     hours: "",
@@ -33,7 +33,7 @@ function countDown(){
 
 setInterval(() => {
     countDown()
-    if (period <= 0) {
+    if (period <= 0) { // 종료 시 예외처리
     countDownBoxEl.innerHTML = `
         <div class="container_countDownBox_countDown">
             <div class="layout">
