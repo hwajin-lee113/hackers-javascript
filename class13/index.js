@@ -5,10 +5,12 @@ let endTime = new Date(targetDate). getTime() // getTime() 메서드는 표준�
 let period = endTime - new Date().getTime() // 타깃날짜 - 오늘날짜 로 카운트다운의 기간을 설정
 
 // 카운트다운 ui에 들어갈 데이터
-let days = ""
-let hours = ""
-let minutes = ""
-let seconds = ""
+const countdown = {
+    days: "",
+    hours: "",
+    minutes: "",
+    seconds: ""
+  };
 
 function countDown(){
     period = endTime - new Date().getTime() // 밀리세컨드를 반환
@@ -31,6 +33,16 @@ function countDown(){
 
 setInterval(() => {
     countDown()
+    if (period <= 0) {
+    countDownBoxEl.innerHTML = `
+        <div class="container_countDownBox_countDown">
+            <div class="layout">
+                <span class="layout_text">카운트다운이 종료되었습니다!</span>
+            </div>
+    </div>`;
+    return;
+    }
+    else {
     countDownBoxEl.innerHTML =  `
         <div class="container_countDownBox_countDown">
             <div class="layout">
@@ -42,5 +54,5 @@ setInterval(() => {
                 <span class="layout_text">전 이에요.</span>
             </div>
             <button class="button">이력서 열람하기</button>
-        </div>`
+        </div>`}
 }, 1000) // 숫자 간격을 두고 반복해서 실행(1초마다)
